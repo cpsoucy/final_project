@@ -1,0 +1,361 @@
+/*-- 
+For future (when expanding this page is my final exam):
+  1. Fix header spacing
+  2. Fix header spacing as you shrink the page down
+  3. Put Guts/Berserk description first, before Miura paragraph
+  4. Change border on header, add border-top (Make thicker/thinner?), change border different color?
+  5. Have header shrink as title image grows on hover? Is this possible?
+  6. Is there a way to shift the figcaption text down as the image grows larger on mouse hover for left image and right image?
+  7. Create modal image for top image (when hovering over top image, it grows and background dims), or something similar
+  8. Add grayscale (100%) to brand of sacrifice png, put repeating on article box side columns, left & right (optional, keep only if it looks good)
+  9. Get website title to look more shiny/metallic (If possible, ask York, show Berserk volume as reference)
+  10. Change fonts? Change text color/spacing?
+  11. Space header nav buttons apart farther?
+  12. Polish header nav buttons? How to make look cleaner? Ask prof. York?
+  13. Space lower buttons apart farther
+  14. Polish lower set of buttons to look nicer 
+  15. Add section for Mori? Below Miura
+  16. Expand website? Add more text, images, effects, etc.
+  17. Use javascript for more effects?
+  18. Encorporate gifs into website? (If I can find some good ones)
+  19. Add toggle for dark/light mode? (Maybe?)
+--*/
+
+html {
+	font-size: 100%;
+  margin-top: 0;
+}
+
+/*-- Affects all images --*/
+img { 
+	width: 100%;
+	height: auto;
+  justify-content: space-evenly;
+}
+
+/*-- Affects entire page --*/
+body { 
+  font-size: 1.6rem;
+  font-family: 'Gentium Book Basic', serif;
+  margin: 0;
+  text-align: justify;
+  padding: 0;
+}
+
+ /*-- Nav list link effects --*/
+nav a:link, nav a:visited {
+  border: 2px solid #4c4c4c;
+  padding: .4em 1em .4em 1em;
+  text-decoration: none;
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: rgb(189, 189, 189);
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 80%;
+  color: rgb(189, 189, 189);
+  background-image: none;
+  background-size: 475%;
+}
+
+ /*-- Nav list button effects on hover--*/
+nav a:hover, nav a:active  {
+  border: 2px solid #4c4c4c;
+  padding: .4em 1em .4em 1em;
+  text-decoration: none;
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: rgb(129, 8, 8);
+  font-weight: 400;
+  font-size: 105%;
+  color: rgb(129, 8, 8);
+  background-color: #333232;
+  transition: 0.25s ease;
+}
+
+/*-- all paragraph (article) text --*/
+p {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  color:rgb(143, 118, 118);
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size:x-large;
+}
+
+.title_text_article_spacing {
+  padding-top: 1%;
+  padding-left: 16%;
+  padding-right: 16%;
+  padding-bottom: 10%;
+}
+
+.left_text_article_spacing {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+}
+
+.right_text_article_spacing {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/*-- <a> anchors (in header nav and bottom of page nav) --*/
+.anchors {
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 2.5em;
+  justify-content: space-evenly;
+  flex: auto;
+  color: rgb(150, 45, 45);
+}
+
+
+/*-- title (Berserk) text --*/
+.small {
+  width: 110%;
+  font-weight: 900;
+  font-family: 'BebasNeue', sans-serif;
+  font-variant-caps: all-small-caps;
+  font-size: 38px;
+  padding-left: 0%;
+
+  transform: scale(3.25, 5);
+  letter-spacing: -0.25rem;
+  background-image: linear-gradient( 
+		rgb(150, 45, 45) 10%,
+		rgb(75, 12, 12) 60%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*-- header nav bar --*/
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(150, 45, 45);
+}
+nav li {
+  margin-left: 1rem;
+} 
+
+/*-- Affects header --*/
+header {
+  padding-left: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-image: url("../images/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
+  background-size: 40%;
+
+  border-style: solid;
+  border-color: rgb(22, 22, 22);
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+}
+
+/*-- Unordered list for header nav bar --*/
+ul { 
+  list-style-type: none;
+  display: flex;
+  margin-top: 15%;
+}
+
+/*-- Brand of Sacrifice Image in header --*/
+/*header img {
+  width: 2rem;
+  padding-top: 10%;
+  margin: 0 auto;
+}
+*/
+
+.header_image {
+  width: 2rem;
+  padding-top: 10%;
+  margin: 0 auto;
+}
+
+/*-- Affects Footer --*/
+footer {
+  background-image: url("../images/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
+  background-size: 35%;
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgb(22, 22, 22);
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+
+/*-- Article (text) style --*/
+article {
+  font-size: 20px;
+  line-height: 1.3;
+  background: rgb(36, 35, 35);
+  padding: 1em;
+  border-radius: 0.5em;
+  padding-bottom: 2rem;
+}
+
+.article_box {
+  background-color: rgb(39, 39, 39);
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+/*-- Affects all Article images --*/
+article figure { 
+  /*--width: 100%;--*/
+  margin: 0;
+  width: auto;
+}
+
+/*-- Affects all article image captions --*/
+figcaption {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(161, 51, 51);
+  justify-content: center;
+  text-align: center;
+}
+
+/*-- Top image --*/
+.title_image {
+  width: 50%;
+  justify-content: center;
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+  border-radius: 0.5em;
+
+  transition: 1s ease;
+}
+/*-- Grow hover effect for top image --*/
+.title_image:hover {
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+
+/* -webkit-filter: brightness(50%); */
+/* -webkit-transition: all 1s ease; */
+/* -moz-transition: all 1s ease; */
+/* -o-transition: all 1s ease; */
+/* -ms-transition: all 1s ease; */
+/* transition: all 1s ease; */
+}
+/*-- Top image caption --*/
+.figure0 {
+  display: block;
+  justify-content: center;
+  font-size: x-large;
+}
+
+/*-- For left image and left figcaption --*/
+.figure1 {
+  float: left;
+  padding-left: 5%;
+}
+
+/*-- For right image and right figcaption --*/
+.figure2 {
+  float: right;
+  padding-top: 1.65rem;
+  padding-right: 5%;
+}
+
+/*-- Left image --*/
+.image1 {
+  width: 20rem;
+  border-radius: 0.5em;
+  display: flex;
+
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: all 1s ease;
+}
+/*-- Grayscale hover effect for image1 --*/
+.image1:hover{
+  filter: grayscale(0%);
+  filter: gray;
+  -webkit-filter: grayscale(0%);
+  filter: none;
+  transition: 0.5s ease;
+
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+  transition: 1s ease;
+}
+
+/*-- Right image --*/
+.image2 {
+  width: 20rem;
+  border-radius: 0.5em;
+  transition: 1s ease;
+}
+/*-- Grow hover effect for image2 --*/
+.image2:hover {
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+}
+
+/*-- Nav buttons at the bottom of page --*/
+.pagination {
+  grid-template-rows: auto;
+  margin: 0;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2em;
+  display: block;
+  text-align: center;
+  padding-top: 15rem;
+}
+
+/*-- Nav buttons at the bottom of page --*/
+a.button {
+  border: 2px solid #4c4c4c;
+  padding: .4em 1em .4em 1em;
+  text-decoration: none;
+  color: rgb(189, 189, 189);
+  border-radius: 8px;
+  border-width: 3px;
+  background-color: #4c4c4c;
+  border-color: rgb(189, 189, 189);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 80%;
+}
+
+/*-- Nav button effects at the bottom of page on hover--*/
+a.button:hover, a.button:active {
+  border: 2px solid #4c4c4c;
+  padding: .4em 1em .4em 1em;
+  text-decoration: none;
+
+  background-size: 475%;
+  color: #4c4c4c;
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: rgb(129, 8, 8);
+  font-weight: 400;
+  font-size: 100%;
+  color: rgb(194, 20, 20);
+  transition: 0.25s ease;
+}
+/*-- changes header and article width on small screens --*/
+@media screen and (max-width: 768px) {
+  header {width: 96%;}
+  article {width: 96%;}
+}
