@@ -18,7 +18,7 @@ For future (when expanding this page is my final exam):
   16. Expand website? Add more text, images, effects, etc.
   17. Use javascript for more effects?
   18. Encorporate gifs into website? (If I can find some good ones)
-  19. Add toggle for dark/light mode? (Maybe?)
+  19. Add media queries so the page adjusts appropriately;
 --*/
 
 html {
@@ -175,7 +175,6 @@ ul {
 */
 
 .header_image {
-  width: 2rem;
   padding-top: 10%;
   margin: 0 auto;
 }
