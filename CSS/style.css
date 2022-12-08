@@ -1,23 +1,18 @@
 /*-- 
 For future (when expanding this page is my final exam):
-  1. Fix header spacing
-  2. Fix header spacing as you shrink the page down
-  3. Put Guts/Berserk description first, before Miura paragraph
-  4. Change border on header, add border-top (Make thicker/thinner?), change border different color?
-  5. Have header shrink as title image grows on hover? Is this possible?
-  6. Is there a way to shift the figcaption text down as the image grows larger on mouse hover for left image and right image?
-  7. Create modal image for top image (when hovering over top image, it grows and background dims), or something similar
-  8. Add grayscale (100%) to brand of sacrifice png, put repeating on article box side columns, left & right (optional, keep only if it looks good)
-  9. Get website title to look more shiny/metallic (If possible, ask York, show Berserk volume as reference)
-  10. Change fonts? Change text color/spacing?
-  11. Space header nav buttons apart farther?
-  12. Polish header nav buttons? How to make look cleaner? Ask prof. York?
-  13. Space lower buttons apart farther
-  14. Polish lower set of buttons to look nicer 
-  15. Add section for Mori? Below Miura
-  16. Expand website? Add more text, images, effects, etc.
-  17. Use javascript for more effects?
-  19. Add media queries so the page adjusts appropriately;
+  1. Fix header spacing;
+  2. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying the deluxe volumes";
+  3. Add media queries so the page adjusts appropriately;
+  4. Fix header spacing as you shrink the page down;
+  5. Polish header nav buttons? How to make look cleaner? Ask prof. York?
+  6. Space lower buttons apart farther;
+  7. Polish lower set of buttons to look nicer;
+  8. (*?) Add section for Mori? Below Miura;
+  9. (*?) Change border on header, add border-top (Make thicker/thinner?), change border different color?
+  10. (*?) Create modal image for top image (when hovering over top image, it grows and background dims), or something similar;
+  11. (*?) Add grayscale (100%) to brand of sacrifice png, put repeating on article box side columns, left & right;
+  12. (*?) Get website title to look more shiny/metallic;
+  13. (*?) Change fonts? Change text color/spacing? 
 --*/
 
 html {
@@ -105,9 +100,8 @@ p {
 /*-- <a> anchors (in header nav and bottom of page nav) --*/
 .anchors {
   text-align: right;
-  margin-top: 0;
+  margin-top: 5rem;
   margin-bottom: 0;
-  padding: 2.5em;
   justify-content: space-evenly;
   flex: auto;
   color: rgb(150, 45, 45);
@@ -116,14 +110,14 @@ p {
 
 /*-- title (Berserk) text --*/
 .small {
-  width: 110%;
+  width: 102%;
   font-weight: 900;
   font-family: 'BebasNeue', sans-serif;
   font-variant-caps: all-small-caps;
-  font-size: 38px;
+  font-size: 70px;
   padding-left: 0%;
 
-  letter-spacing: -0.25rem;
+  letter-spacing: -0.35rem;
   background-image: linear-gradient( 
 		rgb(150, 45, 45) 10%,
 		rgb(75, 12, 12) 60%);
@@ -141,21 +135,27 @@ nav li {
   margin-left: 1rem;
 } 
 
-/*-- Affects header --*/
-header {
+/* Header: */
+.container-fluid.page-header {
   padding-left: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-image: url("../images/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
-  background-size: 40%;
-
+  background-image: url("../images/leather_3.jpg");
+  background-size: 20%;
   border-style: solid;
   border-color: rgb(22, 22, 22);
   border-left-width: 0;
   border-right-width: 0;
   border-top-width: 0;
+  height: 8rem;
 }
+
+.breadcrumb {
+  /* height: 20%; */
+  display: flex;
+  flex-direction: row;
+} 
 
 /*-- Unordered list for header nav bar --*/
 ul { 
@@ -173,9 +173,10 @@ ul {
 */
 
 .header_image {
-  padding-top: 10%;
+  padding-top: 1%;
   margin: 0 auto;
-  width: 5%;
+  width: 5%; 
+  margin-top: 5rem;
 }
 
 /*-- Affects Footer --*/
@@ -358,6 +359,3 @@ a.button:hover, a.button:active {
   article {width: 96%;}
 }
 
-.container-fluid.page-header {
-  background-image: url("../images/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
-}
