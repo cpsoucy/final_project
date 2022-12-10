@@ -34,6 +34,7 @@ body {
   margin: 0;
   text-align: justify;
   padding: 0;
+  width: 100%;
 }
 
  /*-- Nav list link effects --*/
@@ -100,7 +101,6 @@ p {
 /*-- <a> anchors (in header nav and bottom of page nav) --*/
 .anchors {
   text-align: right;
-  margin-top: 5rem;
   margin-bottom: 0;
   justify-content: space-evenly;
   flex: auto;
@@ -114,8 +114,9 @@ p {
   font-weight: 900;
   font-family: 'BebasNeue', sans-serif;
   font-variant-caps: all-small-caps;
-  font-size: 70px;
-  padding-left: 0%;
+  font-size: 80px;
+  padding-left: 5%;
+  margin-top: 0;
 
   letter-spacing: -0.35rem;
   background-image: linear-gradient( 
@@ -137,6 +138,7 @@ nav li {
 
 /* Header: */
 .container-fluid.page-header {
+  width: 100%;
   padding-left: 2%;
   display: flex;
   flex-direction: row;
@@ -148,35 +150,36 @@ nav li {
   border-left-width: 0;
   border-right-width: 0;
   border-top-width: 0;
-  height: 8rem;
+  height: 150px;
 }
 
+/* flex box for header title, image, and nav. bar */
 .breadcrumb {
-  /* height: 20%; */
   display: flex;
   flex-direction: row;
+  margin-top: 1%;
+  height: 70%;
+  width: 100%;
 } 
 
 /*-- Unordered list for header nav bar --*/
 ul { 
   list-style-type: none;
-  display: flex;
   margin-top: 15%;
+  flex: 1;
+  align-self: flex-end;
 }
-
-/*-- Brand of Sacrifice Image in header --*/
-/*header img {
-  width: 2rem;
-  padding-top: 10%;
-  margin: 0 auto;
-}
-*/
 
 .header_image {
   padding-top: 1%;
+  margin-top: -1%;
   margin: 0 auto;
-  width: 5%; 
-  margin-top: 5rem;
+  margin-left: -1%;
+  flex: 0.15;
+}
+
+.title {
+  flex: 1;
 }
 
 /*-- Affects Footer --*/
