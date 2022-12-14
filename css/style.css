@@ -1,24 +1,24 @@
 /*------------
 *IMPORTANT:
-  *Footer isn't appearing properly; line 198
-
+  0. Footer isn't appearing properly;
   1. Fix header spacing;
-  2. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying" the deluxe volumes;
+  2. Fix nav bar breaking at half screen;
   3. Add media queries so the page adjusts appropriately;
   4. Fix header spacing as you shrink the page down;
+  5. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying" the deluxe volumes;
   --------------------------
 *USEFUL:  
-  5. Polish header nav buttons? How to make look cleaner?
-  6. Space lower buttons apart farther;
-  7. Polish lower set of buttons to look nicer;
+  6. Polish header nav buttons? How to make look cleaner?
+  7. Space lower buttons apart farther;
+  8. Polish lower set of buttons to look nicer;
   --------------------------
 *OPTIONAL:
-  8. (*?) Add section for Mori? Below Miura;
-  9. (*?) Change border on header, add border-top (Make thicker/thinner?), change border different color?
-  10. (*?) Create modal image for top image (when hovering over top image, it grows and background dims), or something similar;
-  11. (*?) Add grayscale (100%) to brand of sacrifice png, put repeating on article box side columns, left & right;
-  12. (*?) Get website title to look more shiny/metallic;
-  13. (*?) Change fonts? Change text color/spacing? 
+  9. (*?) Add section for Mori? Below Miura;
+  10. (*?) Change border on header, add border-top (Make thicker/thinner?), change border different color?
+  11. (*?) Create modal image for top image (when hovering over top image, it grows and background dims), or something similar;
+  12. (*?) Add grayscale (100%) to brand of sacrifice png, put repeating on article box side columns, left & right;
+  13. (*?) Get website title to look more shiny/metallic;
+  14. (*?) Change fonts? Change text color/spacing? 
 -----------*/
 
 html {
@@ -149,7 +149,7 @@ nav li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-image: url("../images/leather_3.jpg");
+  background-image: url("../img/leather_3.jpg");
   background-size: 20%;
   border-style: solid;
   border-color: rgb(22, 22, 22);
@@ -195,7 +195,7 @@ ul {
 /*-- Affects Footer --*/
 /* Can't find correct class to affect only footer */
 .footer {
-  background-image: url("../images/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
+  background-image: url("../img/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
   background-size: 35%;
   padding: 2%;
   display: flex;
