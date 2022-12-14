@@ -1,19 +1,27 @@
-/*-- 
-For future (when expanding this page is my final exam):
+/*------------
+*IMPORTANT:
+
+  *Should I even use bootstrap? It seems to be impeding rather than helping at this point;
+  *Footer isn't appearing properly; line 198
+
   1. Fix header spacing;
-  2. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying the deluxe volumes";
+  2. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying" the deluxe volumes;
   3. Add media queries so the page adjusts appropriately;
   4. Fix header spacing as you shrink the page down;
-  5. Polish header nav buttons? How to make look cleaner? Ask prof. York?
+  --------------------------
+*USEFUL:  
+  5. Polish header nav buttons? How to make look cleaner?
   6. Space lower buttons apart farther;
   7. Polish lower set of buttons to look nicer;
+  --------------------------
+*OPTIONAL:
   8. (*?) Add section for Mori? Below Miura;
   9. (*?) Change border on header, add border-top (Make thicker/thinner?), change border different color?
   10. (*?) Create modal image for top image (when hovering over top image, it grows and background dims), or something similar;
   11. (*?) Add grayscale (100%) to brand of sacrifice png, put repeating on article box side columns, left & right;
   12. (*?) Get website title to look more shiny/metallic;
   13. (*?) Change fonts? Change text color/spacing? 
---*/
+-----------*/
 
 html {
 	font-size: 100%;
@@ -60,10 +68,10 @@ nav a:hover, nav a:active  {
   text-decoration: none;
   border-radius: 8px;
   border-width: 3px;
-  border-color: rgb(129, 8, 8);
-  font-weight: 400;
-  font-size: 105%;
-  color: rgb(129, 8, 8);
+  border-color: rgb(145, 28, 28);
+  /* font-weight: 500; */
+  /* font-size: 85%; */
+  color: rgb(182, 90, 90);
   background-color: #333232;
   transition: 0.25s ease;
 }
@@ -103,10 +111,10 @@ p {
   text-align: right;
   margin-bottom: 0;
   justify-content: space-evenly;
-  flex: auto;
+  /* flex: auto; */
   color: rgb(150, 45, 45);
+  margin-top: 10%;
 }
-
 
 /*-- title (Berserk) text --*/
 .small {
@@ -153,13 +161,17 @@ nav li {
   height: 150px;
 }
 
+.container {
+  width: 100%;
+}
+
 /* flex box for header title, image, and nav. bar */
 .breadcrumb {
   display: flex;
   flex-direction: row;
   margin-top: 1%;
   height: 70%;
-  width: 100%;
+  width: 90%;
 } 
 
 /*-- Unordered list for header nav bar --*/
@@ -175,7 +187,7 @@ ul {
   margin-top: -1%;
   margin: 0 auto;
   margin-left: -1%;
-  flex: 0.15;
+  width: 90;
 }
 
 .title {
@@ -183,7 +195,8 @@ ul {
 }
 
 /*-- Affects Footer --*/
-footer {
+/* Can't find correct class to affect only footer */
+.footer {
   background-image: url("../images/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
   background-size: 35%;
   padding: 2%;
