@@ -1,6 +1,5 @@
 /*------------
 *IMPORTANT:
-  0. Footer isn't appearing properly;
   1. Fix header spacing;
   2. Fix nav bar breaking at half screen;
   3. Add media queries so the page adjusts appropriately;
@@ -28,7 +27,6 @@ html {
 
 /*-- Affects all images --*/
 img { 
-	width: 100%;
 	height: auto;
   justify-content: space-evenly;
 }
@@ -114,22 +112,53 @@ p {
   margin-top: 10%;
 }
 
+/* Header image (brand) */
+.img-fluid {
+  margin-top: 5px;
+  max-height: 135px;
+}
+
 /*-- title (Berserk) text --*/
 .small {
-  width: 102%;
+  width: 500px;
   font-weight: 900;
   font-family: 'BebasNeue', sans-serif;
   font-variant-caps: all-small-caps;
-  font-size: 80px;
-  padding-left: 5%;
-  margin-top: 0;
+  font-size: 90px;
+  padding-left: 2%;
+  position: relative;
+  bottom: 10px;
 
-  letter-spacing: -0.35rem;
+  letter-spacing: -0.75rem;
   background-image: linear-gradient( 
 		rgb(150, 45, 45) 10%,
 		rgb(75, 12, 12) 60%);
     -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
+}
+
+.container-fluid {
+  flex-grow: 0.8;
+}
+
+.navbar-nav {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 15px;
+}
+
+.nav-item {
+  margin-left: 3rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.btn {
+  color: rgb(150, 45, 45);
 }
 
 /*-- header nav bar --*/
@@ -143,8 +172,7 @@ nav li {
 } 
 
 /* Header: */
-.container-fluid.page-header {
-  width: 100%;
+.navbar {
   padding-left: 2%;
   display: flex;
   flex-direction: row;
@@ -157,6 +185,12 @@ nav li {
   border-right-width: 0;
   border-top-width: 0;
   height: 150px;
+}
+
+.brand_title_nav {
+  display: flex;
+  flex-direction: row;
+  /* height: 200px; */
 }
 
 .container {
@@ -193,9 +227,8 @@ ul {
 }
 
 /*-- Affects Footer --*/
-/* Can't find correct class to affect only footer */
 .footer {
-  background-image: url("../img/leather_3.jpg"); /*-- N.B. the ../ in the file/path --*/
+  background-image: url("../img/leather_3.jpg");
   background-size: 35%;
   padding: 2%;
   display: flex;
@@ -206,6 +239,11 @@ ul {
   border-left-width: 0;
   border-right-width: 0;
   border-bottom-width: 0;
+}
+
+/* footer information */
+.g-5 {
+
 }
 
 /*-- Article (text) style --*/
@@ -258,13 +296,6 @@ figcaption {
 -ms-transform: scale(1.2);
 transform: scale(1.2);
 transition: 1s ease;
-
-/* -webkit-filter: brightness(50%); */
-/* -webkit-transition: all 1s ease; */
-/* -moz-transition: all 1s ease; */
-/* -o-transition: all 1s ease; */
-/* -ms-transition: all 1s ease; */
-/* transition: all 1s ease; */
 }
 /*-- Top image caption --*/
 .figure0 {
@@ -328,7 +359,7 @@ transition: 1s ease;
 .pagination {
   grid-template-rows: auto;
   margin: 0;
-  justify-content: space-between;
+
   width: 100%;
   padding: 2em;
   display: block;
@@ -357,16 +388,21 @@ a.button:hover, a.button:active {
   padding: .4em 1em .4em 1em;
   text-decoration: none;
 
-  background-size: 475%;
+  /* background-size: 475%; */
   color: #4c4c4c;
   border-radius: 8px;
   border-width: 3px;
   border-color: rgb(129, 8, 8);
-  font-weight: 400;
-  font-size: 100%;
-  color: rgb(194, 20, 20);
-  transition: 0.25s ease;
+  /* font-weight: 400; */
+  /* font-size: 100%; */
+  color: rgb(182, 90, 90);
+  /* transition: 0.25s ease; */
 }
+
+.button {
+    padding-left: 3rem;
+}
+
 /*-- changes header and article width on small screens --*/
 @media screen and (max-width: 768px) {
   header {width: 96%;}
