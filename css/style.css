@@ -1,23 +1,15 @@
 /*------------
 *IMPORTANT:
-  1. Fix header spacing;
-  2. Fix nav bar breaking at half screen;
-  3. Add media queries so the page adjusts appropriately;
-  4. Fix header spacing as you shrink the page down;
-  5. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying" the deluxe volumes;
+  1. Fix header spacing as you shrink the page down;
+  2. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying" the deluxe volumes;
   --------------------------
 *USEFUL:  
-  6. Polish header nav buttons? How to make look cleaner?
-  7. Space lower buttons apart farther;
-  8. Polish lower set of buttons to look nicer;
+  3. Polish header nav buttons? How to make look cleaner?
+  4. Space lower buttons apart farther;
+  5. Polish lower set of buttons to look nicer;
   --------------------------
 *OPTIONAL:
-  9. (*?) Add section for Mori? Below Miura;
-  10. (*?) Change border on header, add border-top (Make thicker/thinner?), change border different color?
-  11. (*?) Create modal image for top image (when hovering over top image, it grows and background dims), or something similar;
-  12. (*?) Add grayscale (100%) to brand of sacrifice png, put repeating on article box side columns, left & right;
-  13. (*?) Get website title to look more shiny/metallic;
-  14. (*?) Change fonts? Change text color/spacing? 
+  6. (*?) Create modal image for top image (when hovering over top image, it grows and background dims), or something similar;
 -----------*/
 
 html {
@@ -44,7 +36,8 @@ body {
  /*-- Nav list link effects --*/
 nav a:link, nav a:visited {
   border: 2px solid #4c4c4c;
-  padding: .4em 1em .4em 1em;
+  /* padding for buttons when they're not in sub-menu */
+  padding: .5em 1em .5em 1em;
   text-decoration: none;
   border-radius: 8px;
   border-width: 3px;
@@ -55,12 +48,16 @@ nav a:link, nav a:visited {
   color: rgb(189, 189, 189);
   background-image: none;
   background-size: 475%;
+  /* width: */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* height: 30px; */
 }
 
  /*-- Nav list button effects on hover--*/
 nav a:hover, nav a:active  {
   border: 2px solid #4c4c4c;
-  padding: .4em 1em .4em 1em;
+  /* padding: .4em 1em .4em 1em; */
   text-decoration: none;
   border-radius: 8px;
   border-width: 3px;
@@ -118,9 +115,14 @@ p {
   max-height: 135px;
 }
 
+h1 {
+  /*  */
+}
+
 /*-- title (Berserk) text --*/
 .small {
-  width: 500px;
+  width:fit-content;
+  padding-right: 2rem;
   font-weight: 900;
   font-family: 'BebasNeue', sans-serif;
   font-variant-caps: all-small-caps;
@@ -137,6 +139,17 @@ p {
     -webkit-text-fill-color: transparent;
 }
 
+.nav-wrap {
+  display: flex;
+  width: 100%;
+  margin-left: auto;
+  justify-self: end;
+}
+
+.site-nav {
+/*  */
+}
+
 .container-fluid {
   flex-grow: 0.8;
 }
@@ -147,6 +160,8 @@ p {
   justify-content: flex-end;
   position: relative;
   bottom: 15px;
+  padding: 0;
+  width: 500px;
 }
 
 .nav-item {
@@ -174,6 +189,7 @@ nav li {
 /* Header: */
 .navbar {
   padding-left: 2%;
+  padding-right: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -187,10 +203,15 @@ nav li {
   height: 150px;
 }
 
+.container-fluid {
+  width: 98%;
+}
+
 .brand_title_nav {
   display: flex;
   flex-direction: row;
-  /* height: 200px; */
+  /* width: 100%; */
+  width: flex;
 }
 
 .container {
@@ -251,15 +272,15 @@ article {
   font-size: 20px;
   line-height: 1.3;
   background: rgb(36, 35, 35);
-  padding: 1em;
+  /* padding: 1em; */
   border-radius: 0.5em;
   padding-bottom: 2rem;
 }
 
 .article_box {
   background-color: rgb(39, 39, 39);
-  padding-left: 5%;
-  padding-right: 5%;
+  /* padding-left: 5%; */
+  /* padding-right: 5%; */
   padding-top: 1%;
   padding-bottom: 1%;
 }
@@ -334,7 +355,6 @@ transition: 1s ease;
   -webkit-filter: grayscale(0%);
   filter: none;
   transition: 0.5s ease;
-
   -webkit-transform: scale(1.15);
   -ms-transform: scale(1.15);
   transform: scale(1.15);
@@ -360,7 +380,7 @@ transition: 1s ease;
   grid-template-rows: auto;
   margin: 0;
 
-  width: 100%;
+  /* width: 100%; */
   padding: 2em;
   display: block;
   text-align: center;
@@ -385,9 +405,8 @@ a.button {
 /*-- Nav button effects at the bottom of page on hover--*/
 a.button:hover, a.button:active {
   border: 2px solid #4c4c4c;
-  padding: .4em 1em .4em 1em;
+  /* padding: .4em 1em .4em 1em; */
   text-decoration: none;
-
   /* background-size: 475%; */
   color: #4c4c4c;
   border-radius: 8px;
@@ -404,13 +423,15 @@ a.button:hover, a.button:active {
 }
 
 a#trigram {
-  display: inheritS;
+  display: inherit;
   border: 0;
+  margin-top: 1.5rem;
   background-color:transparent;
-
+  margin-left: auto;
 }
 
 a#trigram::before { 
+  display: none;
   content: '\2630'; 
   font-size: 4rem; 
   position: relative; 
@@ -418,13 +439,31 @@ a#trigram::before {
   right: 0; 
 }
 
+@media screen and (max-width: 1175px) {
+  .nav-item {margin-left: 1rem;}
+}
+
+@media screen and (max-width: 1075px) {
+  .small {
+    font-size: 85px;
+    margin-top: 0.25rem;
+  }
+
+  .navbar-nav {
+    padding-left: 0;
+    top: -.65rem; 
+  }
+}
 
 @media screen and (max-width: 1000px) {
-  header {width: 96%;}
-  article {width: 96%;}
-  .nav-wrap {
-    display: none;
+  header {width: 100%;}
+  article {width: 100%;}
+  .nav-wrap {display: none;}
+
+  a#trigram::before {
+    display: inherit;
   }
+
   .nav-wrap.mobile {
     position:absolute;
     z-index: 10;
@@ -442,13 +481,94 @@ a#trigram::before {
     display: block;
     width: 100%;
     text-align: right;
-    padding: 2rem 2rem;
+    /* padding: 2rem 2rem; */
     margin: 0;
+    display: flex;
+    flex-direction: column;
   }
   .nav-wrap.mobile  a:hover {
     background-color: var(--light);
   }
   a#trigram {display: inherit;}
   a#trigram.tri-mobile::before {content: '\00D7';}
+
+  /* Outer section */
+.nav-wrap.mobile {
+  background-color: rgb(22, 22, 22);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: 2.5rem;
+}
+
+/* inner section */
+  .navbar-nav {
+    width: 40%;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    background-color: rgb(22, 22, 22);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  a#trigram {
+    margin-top: 3.65rem;
+  }
+
+  .nav-item {
+    padding: 0;
+    margin-bottom: 1rem;
+    width: 10%;
+    align-self: flex-end;
+    margin-left: 0;
+    padding-right: 3rem;
+    margin-right: 2rem;
+  }
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    margin-top: 2rem;
+    padding-left: 0;
+    justify-content: center;
+    justify-self: center;
+  }
+
+  nav a:link, nav a:visited {
+    display: flex;
+    flex-direction: column;
+    border: transparent
+  }
+
+  .title_text_article_spacing {
+    padding-left: 2.5%;
+    padding-right: 5%;
+  }
+
+.article_box {
+  /* padding-left: 5%; */
+  /* padding-right: 5%; */
+  background-color: aquamarine;
+}
+
+  article {
+    /* padding-right: 1%; */
+    /* padding-left: 1%; */
+  }
+
+  .left_text_article_spacing {
+    padding-right: 0%;
+  }
+
+  .right_text_article_spacing {
+    padding-left: 0;
+  }
+
+  p {
+    font-size: 15pt;
+  }
 }
 
