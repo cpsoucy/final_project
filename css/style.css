@@ -1,8 +1,11 @@
 /*------------
-  1. Fix broken bottom nav buttons
-  2. Put slight curve on manga images so they're not so sharp;
-  3. Get regular/deluxe text to the right of the image when screen is larger than ~500 px;
-  4. Any other final changes?
+  1. Fix spacing of manga volumes text at all media query sizes;
+  2. Why does manga volumes text shrink so much at some sizes?;
+  3. Fix trigram menu-getting cut off at smaller screen size (make .small smaller);
+  4. Any other final changes? Be thourough about checking everything;
+  5. Push to github, make sure deployed page works as expected;
+  6. Put github repository link on moodle, put deployed page link on moodle;
+  7. Email York that I finished the project; 
 --------------*/
 
 html {
@@ -89,17 +92,19 @@ p {
 }
 
 .third_text_article_spacing {
-  padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 10%;
+  position: relative;
+  top: -20rem;
+  margin-left: 25rem;
+  margin-right: 2rem;
 }
 
 .fourth_text_article_spacing {
-  padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+  position: relative;
+  top: -21rem;
+  margin-left: 25rem;
+  margin-right: 2rem;
 }
+
 
 /*-- <a> anchors (in header nav and bottom of page nav) --*/
 .anchors {
@@ -115,10 +120,6 @@ p {
 .img-fluid {
   margin-top: 5px;
   max-height: 135px;
-}
-
-h1 {
-  /*  */
 }
 
 /*-- title (Berserk) text --*/
@@ -147,14 +148,6 @@ h1 {
   display: flex;
   margin-left: auto;
   justify-self: end;
-}
-
-.site-nav {
-/*  */
-}
-
-.container-fluid {
-
 }
 
 .navbar-nav {
@@ -312,7 +305,6 @@ figcaption {
   margin-left: auto; 
   margin-right: auto;
   border-radius: 0.5em;
-
   transition: 1s ease;
 }
 /*-- Grow hover effect for top image --*/
@@ -379,24 +371,36 @@ transform: scale(1.2);
 transition: 1s ease;
 }
 
+.volumes {
+  display: flex;
+  flex-direction: column;
+}
+
 .figure3 {
-  /* float: right; */
+  float: left;
   padding-top: 7rem;
-  padding-right: 5%;
+  /* padding-right: 5%; */
+  /* width: 100%; */
+  padding-right: 0;
+  padding-left: 5%;
 }
 
 .image3 {
   width: 20rem;
+  border-radius: 0.25rem;
+  /* padding-right: 20%; */
 }
 
 .figure4 {
-  /* float: right; */
+  float: left;
   padding-top: 1.65rem;
-  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .image4 {
+  /* padding-top: 10rem; */
   width: 20rem;
+  border-radius: 0.25rem;
 }
 
 /*-- Nav buttons at the bottom of page --*/
@@ -424,6 +428,7 @@ a.button {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 80%;
+  margin-left: 2rem;
 }
 
 /*-- Nav button effects at the bottom of page on hover--*/
@@ -460,6 +465,10 @@ a#trigram::before {
   position: relative; 
   top: -.5rem; 
   right: 0; 
+}
+
+.container-fluid {
+  justify-content: center;
 }
 
 @media screen and (max-width: 2000px) {
@@ -660,6 +669,28 @@ a#trigram::before {
     padding-right: 3%;
     display: initial;
   }
+
+  .third_text_article_spacing {
+    position: relative;
+    top: -14rem;
+    margin-left: 19rem;
+    margin-right: 2rem;
+  }
+
+  .image3 {
+    width: 15rem;
+  }
+
+  .fourth_text_article_spacing {
+    position: relative;
+    top: -15rem;
+    margin-left: 19rem;
+    margin-right: 2rem;
+  }
+
+  .image4 {
+    width: 15rem;
+  }
 }
 
 
@@ -695,6 +726,15 @@ a#trigram::before {
 @media screen and (max-width: 590px) {
   .navbar {
     height: 120px;
+    background-size: 70%;
+  }
+
+  .footer {
+    background-size: 70%;
+  }
+
+  .nav-wrap.mobile {
+    margin-top: 0.7rem;
   }
 
   .img-fluid {
@@ -719,16 +759,19 @@ a#trigram::before {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 25%;
+    padding-right: 25%;
   }
 
   .button {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
 @media screen and (max-width: 460px) {
+  .navbar {background-size: 80%;}
+  .footer {background-size: 80%;}
+
   .img-fluid {
     max-height: 75px;
     margin-top: 1.5rem;
@@ -755,6 +798,7 @@ a#trigram::before {
 
   .figure2 {
     width: 10rem;
+    padding-right: 10%;
   }
 
   .image2 {
