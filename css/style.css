@@ -1,16 +1,9 @@
 /*------------
-*IMPORTANT:
-  1. Fix header spacing as you shrink the page down;
-  2. Add two new sections at the top of the page, one for "buying" the regular manga volumes, and one for "buying" the deluxe volumes;
-  --------------------------
-*USEFUL:  
-  3. Polish header nav buttons? How to make look cleaner?
-  4. Space lower buttons apart farther;
-  5. Polish lower set of buttons to look nicer;
-  --------------------------
-*OPTIONAL:
-  6. (*?) Create modal image for top image (when hovering over top image, it grows and background dims), or something similar;
------------*/
+  1. Fix broken bottom nav buttons
+  2. Put slight curve on manga images so they're not so sharp;
+  3. Get regular/deluxe text to the right of the image when screen is larger than ~500 px;
+  4. Any other final changes?
+--------------*/
 
 html {
 	font-size: 100%;
@@ -48,10 +41,6 @@ nav a:link, nav a:visited {
   color: rgb(189, 189, 189);
   background-image: none;
   background-size: 475%;
-  /* width: */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* height: 30px; */
 }
 
  /*-- Nav list button effects on hover--*/
@@ -86,14 +75,27 @@ p {
   padding-bottom: 10%;
 }
 
-.left_text_article_spacing {
+.first_text_article_spacing {
   padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 10%;
 }
 
-.right_text_article_spacing {
+.second_text_article_spacing {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.third_text_article_spacing {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+}
+
+.fourth_text_article_spacing {
   padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
@@ -377,6 +379,26 @@ transform: scale(1.2);
 transition: 1s ease;
 }
 
+.figure3 {
+  /* float: right; */
+  padding-top: 7rem;
+  padding-right: 5%;
+}
+
+.image3 {
+  width: 20rem;
+}
+
+.figure4 {
+  /* float: right; */
+  padding-top: 1.65rem;
+  padding-right: 5%;
+}
+
+.image4 {
+  width: 20rem;
+}
+
 /*-- Nav buttons at the bottom of page --*/
 .pagination {
   grid-template-rows: auto;
@@ -441,8 +463,8 @@ a#trigram::before {
 }
 
 @media screen and (max-width: 2000px) {
-  .left_text_article_spacing {padding-right: 3%;}
-  .right_text_article_spacing {padding-left: 3%;}
+  .first_text_article_spacing {padding-right: 3%;}
+  .second_text_article_spacing {padding-left: 3%;}
 }
 
 @media screen and (max-width: 1600px) {
@@ -451,16 +473,23 @@ a#trigram::before {
 }
 
 @media screen and (max-width: 1500px) {
-  .left_text_article_spacing {padding-right: 2%;}
-  .right_text_article_spacing {padding-left: 2%;}
+  .first_text_article_spacing {padding-right: 2%;}
+  .second_text_article_spacing {padding-left: 2%;}
 }
 
 @media screen and (max-width: 1350px) {
   .navbar {background-size: 30%;}
   .footer {background-size: 30%;}
 
-  .left_text_article_spacing {padding-right: 0%;}
-  .right_text_article_spacing {padding-left: 0;}
+  .first_text_article_spacing {
+    padding-right: 0%;
+    padding-top: 2%;
+  }
+
+  .second_text_article_spacing {
+    padding-left: 0;
+    padding-top: 2%;
+  }
 }
 
 @media screen and (max-width: 1175px) {
@@ -581,18 +610,23 @@ a#trigram::before {
   }
 
   /* outer article box */
-.article_box {
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-/* inner article contents */
-  article {
-
+  .article_box {
+   padding-left: 2%;
+   padding-right: 2%;
   }
 
-  .left_text_article_spacing {padding-right: 0%;}
-  .right_text_article_spacing {padding-left: 0;}
+  .first_text_article_spacing {
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+  }
+  
+  .second_text_article_spacing {
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 
   p {font-size: 15pt;}
 
@@ -601,22 +635,30 @@ a#trigram::before {
 
   .figure1 {
     font-size: 17px;
+    padding-bottom: 0%;
+    top: 5%;
+    width: 17rem;
+    margin-right: 1rem;
   }
 
   .figure2 {
     font-size: 17px;
+    width: 17rem;
   }
 
   .image1 {
     width: 17rem;
+    margin-right: 1rem;
   }
   .image2 {
     width: 17rem;
+    margin-left: 1rem;
   }
 
   p {
     padding-left: 3%;
     padding-right: 3%;
+    display: initial;
   }
 }
 
@@ -633,12 +675,17 @@ a#trigram::before {
 
   .figure1 {
     font-size: 15px;
+    width: 15rem;
+    margin-right: 1rem;
   }
   .image1 {
     width: 15rem;
+    margin-right: 1rem;
   }
   .figure2 {
     font-size: 15px;
+    width: 16rem;
+    text-align: center;
   }
   .image2 {
     width: 15rem;
@@ -664,6 +711,21 @@ a#trigram::before {
   a#trigram {
     margin-top: 3rem;
   }
+
+  .pagination {
+    margin-top: 3rem;
+    padding: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .button {
+    margin-top: 1rem;
+  }
 }
 
 @media screen and (max-width: 460px) {
@@ -680,5 +742,22 @@ a#trigram::before {
 
   a#trigram {
     margin-top: 2.75rem;
+  }
+
+  .figure1 {
+    width: 10rem;
+    margin-right: 0.5rem;
+  }
+
+  .image1 {
+    width: 10rem;
+  }
+
+  .figure2 {
+    width: 10rem;
+  }
+
+  .image2 {
+    width: 10rem;
   }
 }
