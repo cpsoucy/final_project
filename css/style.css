@@ -1,13 +1,11 @@
 /*------------
-  1. Fix spacing of manga volumes text at all media query sizes;
-  2. Why does manga volumes text shrink so much at some sizes?;
-  3. Allow text for manga volumes to wrap under the pictures, shrink volume images as screen size decreases; 
-  4. Fix trigram menu-getting cut off at smaller screen size (make .small smaller);
-  5. Make "Back to the top" pagination button centered until the media query break;
-  6. Any other final changes? Be thourough about checking everything;
-  7. Push to github, make sure deployed page works as expected;
-  8. Put github repository link on moodle, put deployed page link on moodle;
-  9. Email York that I finished the project; 
+  1. Make top image larger as the page shrinks;
+  2. Make sure fig1 and fig2 captions are not overlapping with paragraph text;
+  3. Remove unneccessary spacing at bottom of page;
+  4. Any other final changes? Be thourough about checking everything;
+  5. Push to github, make sure deployed page works as expected;
+  6. Put github repository link on moodle, put deployed page link on moodle;
+  7. Email York that I finished the project; 
 --------------*/
 
 html {
@@ -382,11 +380,13 @@ transition: 1s ease;
 .volumes {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .figure3 {
   float: left;
   padding-top: 7rem;
+
   /* padding-right: 5%; */
   /* width: 100%; */
   padding-right: 0;
@@ -395,6 +395,7 @@ transition: 1s ease;
 }
 
 .image3 {
+  position: relative;
   width: 20rem;
   border-radius: 0.25rem;
   /* padding-right: 20%; */
@@ -409,6 +410,7 @@ transition: 1s ease;
 
 .image4 {
   /* padding-top: 10rem; */
+  position: relative;
   width: 20rem;
   border-radius: 0.25rem;
 }
@@ -422,7 +424,7 @@ transition: 1s ease;
   padding: 2em;
   display: block;
   text-align: center;
-  padding-top: 15rem;
+  padding-top: 2rem;
 }
 
 /*-- Nav buttons at the bottom of page --*/
@@ -497,6 +499,12 @@ a#trigram::before {
 @media screen and (max-width: 1500px) {
   .first_text_article_spacing {padding-right: 2%;}
   .second_text_article_spacing {padding-left: 2%;}
+  .third_text_article_spacing {padding-right: 2%}
+  .fourth_text_article_spacing {padding-right: 2%}
+
+  .title_image {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 1350px) {
@@ -512,12 +520,24 @@ a#trigram::before {
     padding-left: 0;
     padding-top: 2%;
   }
+
+  .figure4 {
+    top: 2rem;
+  }
 }
 
 @media screen and (max-width: 1175px) {
   .nav-item {margin-left: 1rem;}
   .navbar {background-size: 35%;}
   .footer {background-size: 35%;}
+
+  .figure3 {
+    top: 2rem;
+  }
+
+  .figure4 {
+    top: 4.5rem;
+  }
 }
 
 @media screen and (max-width: 1075px) {
@@ -533,6 +553,14 @@ a#trigram::before {
 
   .figure2 {
     top: 2.5rem; 
+  }
+
+  .figure3 {
+    top: 3rem;
+  }
+
+  .figure4 {
+    top: 5.5rem;
   }
 }
 
@@ -675,6 +703,10 @@ a#trigram::before {
     text-align: center;
   }
 
+  .title_image {
+    width: 70%;
+  }
+
   .image1 {
     width: 17rem;
     /* margin-right: 1rem; */
@@ -697,6 +729,10 @@ a#trigram::before {
     margin-right: 2rem;
   }
 
+  .figure3 {
+    top: 0.2rem;
+  }
+
   .image3 {
     width: 15rem;
   }
@@ -709,9 +745,82 @@ a#trigram::before {
 
   .image4 {
     width: 15rem;
+    top: -3.5rem;
   }
 }
 
+@media screen and (max-width: 850px) {
+  .figure3 {
+    top: 1rem;
+  }
+
+  .figure2 {
+    top: 2.5rem;
+  }
+
+  .image4 {
+    top:-2rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .figure3 {
+    top: 1rem;
+  }
+
+  .image4 {
+    top: -2.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image4 {
+    top: -1.75rem;
+  }
+
+  .figure2 {
+    top: 1.5rem;
+  }
+}
+
+
+@media screen and (max-width: 775px) {
+  .image3 {
+    width: 12rem;
+    top: -1rem;
+  }
+
+  .third_text_article_spacing {
+    margin-left: 14rem;
+    margin-right: 0.25rem;
+  }
+
+  p {
+    display: initial;
+  }
+
+  .figure2 {
+    top: 1.5rem;
+  }
+
+  .figure3 {
+    padding-left: 1rem;
+  }
+
+  .figure4 {
+    padding-left: 1rem;
+  }
+
+  .image4 {
+    width: 12rem;
+    top: -5rem;
+  }
+
+  .fourth_text_article_spacing {
+    margin-left: 14rem;
+    margin-right: 0.25rem;
+  }
+}
 
 @media screen and (max-width: 690px) {
   .navbar {background-size: 50%;}
@@ -746,6 +855,73 @@ a#trigram::before {
   p {
     font-size: 14pt;
   }
+
+  .figure3 {
+    padding-left: 0.75rem;
+  }
+
+  .third_text_article_spacing {
+    margin-left: 13.5rem;
+    margin-right: 0;
+    top: -13rem;
+  }
+
+  .figure4 {
+    padding-left: 0.75rem;
+  }
+
+  .image4 {
+    width: 12rem;
+    top: -7rem;
+  }
+
+  .fourth_text_article_spacing {
+    margin-left: 13.5rem;
+    margin-right: 0;
+    top: -17rem;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .image4 {
+    top: -6.5rem;
+  }
+
+  .pagination {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .figure3 {
+    padding-left: 0.75rem;
+  }
+
+  .image3 {
+    width: 10rem;
+    top: -2.5rem;
+  }
+
+  .third_text_article_spacing {
+    margin-left: 11.5rem;
+    margin-right: 0;
+  }
+
+  .figure4 {
+    padding-left: 0.75rem;
+  }
+
+  .image4 {
+    width: 10rem;
+    top: -7.5rem;
+  }
+
+  .fourth_text_article_spacing {
+    margin-left: 11.5rem;
+    margin-right: 0;
+    top: -16.8rem;
+  }
 }
 
 @media screen and (max-width: 590px) {
@@ -778,7 +954,6 @@ a#trigram::before {
   }
 
   .pagination {
-    margin-top: 3rem;
     padding: 0;
     width: 50%;
     display: flex;
@@ -790,6 +965,80 @@ a#trigram::before {
 
   .button {
     margin-top: 1.5rem;
+  }
+
+  .figure3 {
+    padding-left: 0.5rem;
+  }
+
+  .image3 {
+    width: 8rem;
+    top: -0.5rem;
+  }
+
+  .third_text_article_spacing {
+    margin-left: 9rem;
+    margin-right: 0;
+    top: -9rem;
+  }
+
+  p {
+    font-size: 13pt;
+  }
+
+  .figure4 {
+    padding-left: 0.5rem;
+  }
+
+  .image4 {
+    width: 8rem;
+    top: -4.75rem;
+  }
+
+  .fourth_text_article_spacing {
+    margin-left: 9rem;
+    margin-right: 0;
+    top: -11rem;
+  }
+}
+
+@media screen and (max-width: 520px){
+  .small {
+    font-size: 55px;
+  }
+
+  .figure3 {
+    padding-left: 0.5rem;
+  }
+
+  .image3 {
+    width: 8rem;
+    top: 1.25rem;
+  }
+
+  .third_text_article_spacing {
+    margin-left: 9rem;
+    margin-right: 0;
+    top: -9rem;
+  }
+
+  p {
+    font-size: 12.5pt;
+  }
+
+  .figure4 {
+    padding-left: 0.5rem;
+  }
+
+  .image4 {
+    width: 8rem;
+    top: -5rem;
+  }
+
+  .fourth_text_article_spacing {
+    margin-left: 9rem;
+    margin-right: 0;
+    top: -11rem;
   }
 }
 
@@ -812,6 +1061,10 @@ a#trigram::before {
     margin-top: 2.75rem;
   }
 
+  .title_image {
+    width: 85%;
+  }
+
   .figure1 {
     width: 10rem;
     margin-right: 0.5rem;
@@ -824,9 +1077,46 @@ a#trigram::before {
   .figure2 {
     width: 10rem;
     padding-right: 10%;
+    top: 1rem;
   }
 
   .image2 {
     width: 10rem;
+  }
+
+  .figure3 {
+    padding-left: 0.5rem;
+    padding-top: 3rem;
+  }
+
+  .image3 {
+    width: 6rem;
+    top: 0.5rem;
+  }
+
+  .third_text_article_spacing {
+    margin-left: 7.5rem;
+    margin-right: 0;
+    top: -6.75rem;
+  }
+
+  p {
+    font-size: 12pt;
+  }
+
+  .figure4 {
+    padding-left: 0.5rem;
+  }
+
+  .image4 {
+    width: 6rem;
+    top: -8rem;
+    padding-top: 0rem;
+  }
+
+  .fourth_text_article_spacing {
+    margin-left: 7.5rem;
+    margin-right: 0;
+    top: -11rem;
   }
 }
