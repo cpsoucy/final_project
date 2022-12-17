@@ -1,11 +1,13 @@
 /*------------
   1. Fix spacing of manga volumes text at all media query sizes;
   2. Why does manga volumes text shrink so much at some sizes?;
-  3. Fix trigram menu-getting cut off at smaller screen size (make .small smaller);
-  4. Any other final changes? Be thourough about checking everything;
-  5. Push to github, make sure deployed page works as expected;
-  6. Put github repository link on moodle, put deployed page link on moodle;
-  7. Email York that I finished the project; 
+  3. Allow text for manga volumes to wrap under the pictures, shrink volume images as screen size decreases; 
+  4. Fix trigram menu-getting cut off at smaller screen size (make .small smaller);
+  5. Make "Back to the top" pagination button centered until the media query break;
+  6. Any other final changes? Be thourough about checking everything;
+  7. Push to github, make sure deployed page works as expected;
+  8. Put github repository link on moodle, put deployed page link on moodle;
+  9. Email York that I finished the project; 
 --------------*/
 
 html {
@@ -80,14 +82,14 @@ p {
 
 .first_text_article_spacing {
   padding-top: 5%;
-  padding-left: 10%;
+  padding-left: 5%;
   padding-right: 10%;
   padding-bottom: 10%;
 }
 
 .second_text_article_spacing {
   padding-top: 5%;
-  padding-left: 10%;
+  padding-left: 5%;
   padding-right: 10%;
 }
 
@@ -295,6 +297,7 @@ figcaption {
   color:rgb(161, 51, 51);
   justify-content: center;
   text-align: center;
+  text-align: center;
 }
 
 /*-- Top image --*/
@@ -325,6 +328,8 @@ transition: 1s ease;
 .figure1 {
   float: left;
   padding-left: 5%;
+  position: relative;
+  /* top: -5rem; */
 }
 
 /*-- For right image and right figcaption --*/
@@ -332,6 +337,9 @@ transition: 1s ease;
   float: right;
   padding-top: 1.65rem;
   padding-right: 5%;
+  padding-bottom: 1rem;
+  position: relative;
+  left: 1rem;
 }
 
 /*-- Left image --*/
@@ -383,6 +391,7 @@ transition: 1s ease;
   /* width: 100%; */
   padding-right: 0;
   padding-left: 5%;
+  position: relative;
 }
 
 .image3 {
@@ -395,6 +404,7 @@ transition: 1s ease;
   float: left;
   padding-top: 1.65rem;
   padding-left: 5%;
+  position: relative;
 }
 
 .image4 {
@@ -479,6 +489,9 @@ a#trigram::before {
 @media screen and (max-width: 1600px) {
   .navbar {background-size: 25%;}
   .footer {background-size: 25%;}
+  .figure2 {
+    top: 1rem;
+  }
 }
 
 @media screen and (max-width: 1500px) {
@@ -516,6 +529,10 @@ a#trigram::before {
   .navbar-nav {
     padding-left: 0;
     top: -.65rem; 
+  }
+
+  .figure2 {
+    top: 2.5rem; 
   }
 }
 
@@ -645,23 +662,27 @@ a#trigram::before {
   .figure1 {
     font-size: 17px;
     padding-bottom: 0%;
-    top: 5%;
+    /* top: 5%; */
     width: 17rem;
     margin-right: 1rem;
+    top: -1rem;
   }
 
   .figure2 {
     font-size: 17px;
     width: 17rem;
+    top: 3rem;
+    text-align: center;
   }
 
   .image1 {
     width: 17rem;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
+
   }
   .image2 {
     width: 17rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
   }
 
   p {
@@ -671,7 +692,6 @@ a#trigram::before {
   }
 
   .third_text_article_spacing {
-    position: relative;
     top: -14rem;
     margin-left: 19rem;
     margin-right: 2rem;
@@ -682,7 +702,6 @@ a#trigram::before {
   }
 
   .fourth_text_article_spacing {
-    position: relative;
     top: -15rem;
     margin-left: 19rem;
     margin-right: 2rem;
@@ -708,6 +727,7 @@ a#trigram::before {
     font-size: 15px;
     width: 15rem;
     margin-right: 1rem;
+    top: 0.01rem;
   }
   .image1 {
     width: 15rem;
@@ -717,9 +737,14 @@ a#trigram::before {
     font-size: 15px;
     width: 16rem;
     text-align: center;
+    top: 2rem;
   }
   .image2 {
     width: 15rem;
+  }
+
+  p {
+    font-size: 14pt;
   }
 }
 
